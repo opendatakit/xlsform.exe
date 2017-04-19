@@ -20,9 +20,9 @@ If you are familiar with Python one work around would be to run [the XLSForm cod
 Setting up Python on Windows:
 -----------------------------
 
-Install Python 2.7
+Install Python 2.7 (32 bit)
 
-This has been updated to use Python 2.7 (now built with 2.7.3)
+This has been updated to use Python 2.7 (now built with 2.7.13)
 
 Add Scripts directory to PATH
 -----------------------------
