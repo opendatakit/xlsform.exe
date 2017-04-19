@@ -1,118 +1,52 @@
-If possible use the online [XLSForm converter](http://opendatakit.org/use/xlsform/).
-XLSForm.exe won't work on all Windows systems, it doesn't run the output xml through ODK Validate, and it won't be updated as frequently as the online version.
+# ODK XLSForm.exe
+![Platform](https://img.shields.io/badge/platform-Python-blue.svg)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Slack status](http://slack.opendatakit.org/badge.svg)](http://slack.opendatakit.org)
 
-Using XLSForm.exe:
-------------------
-1. Download the zip [here](http://opendatakit.org/downloads/download-info/xlsform-for-windows/).
-2. Extract it somewhere.
-3. Drag an XLSForm onto xlsform.exe. A corresponding xform will appear in the output directory.
+## Please read
+* XLSForm.exe does not work on every computer, it does not validate the output XML, and it is not updated frequently. For these reasons, we recommend you use the online [XLSForm converter](http://opendatakit.org/use/xlsform/). 
+* When running the app, some users might be [missing the Microsoft Visual C runtime DLL](http://www.py2exe.org/index.cgi/Tutorial#A5.ProvidingtheMicrosoftVisualCruntimeDLL) on their computer. This DLL is not bundled with the exe and there is no easy workaround for these users.
 
-___________________________________
+## Using XLSForm.exe
+1. Download the zip from the [ODK website](http://opendatakit.org/downloads/download-info/xlsform-for-windows/).
+1. Extract it somewhere.
+1. Drag an XLSForm onto XLSForm.exe. 
+	* A corresponding XForm will appear in the output directory.
 
+## Build requirements
+1. Install [Python 2.7.x (32-bit)](https://www.python.org/downloads/).
+	* Add `C:\Python27` and `C:\Python27\Scripts` to your path.
+1. Install required libraries for pyxform.
+	* `pip install xlrd unicodecsv`.
+1. Download [elementtree (zip)](http://effbot.org/downloads#elementtree).
+	* Unzip and run `python setup.py install` in the unzipped directory.
+1. Install [py2exe (32-bit for Python 2.7)](http://www.py2exe.org/).
 
-Problems:
----------
+## Building the exe
+1. Download the latest release of the [pyxform source](https://github.com/XLSForm/pyxform/releases).
+1. In XLSForm.exe's root directory, add the nested `pyxform` directory from pyxform's source.
+1. In XLSForm.exe's root directory, run `python setup.py py2exe`.
+	* You may get an expected warning about missing modules and binary dependencies.
+	* The build is successful when there is a `xlsform.exe` file inside the `dist` directory.
+1. Inside the `dist` directory, create an `output` directory.
+1. Confirm `xlsform.exe` works dragging a sample file onto the binary. 
+	* A corresponding XForm will appear in the `output` directory.
+	* You can also run it from the command line to see debugging information, if any.
 
-Some systems might be missing the Microsoft Visual C runtime DLL [and it is not bundled with the exe](http://www.py2exe.org/index.cgi/Tutorial#A5.ProvidingtheMicrosoftVisualCruntimeDLL).
+## Packaging the exe
+1. Build the exe and confirm it works.
+1. In the `dist` directory, rename the `xlsform.exe` file to `XLSForm.exe`.
+1. In the `dist` folder, make sure `output` is empty.
+1. Rename the `dist` directory to `XLSForm vx.x.x`.
+1. Right-click on `XLSForm vx.x.x`, choose `Send To / Compressed (zipped) folder`. 
+1. The resulting zip file is equivalent to the zip available on the [ODK website](http://opendatakit.org/downloads/download-info/xlsform-for-windows/) page
 
-If you are familiar with Python one work around would be to run [the XLSForm code](https://github.com/UW-ICTD/pyxform) directly.
+## Contributing code
+Any and all contributions to the project are welcome. ODK XLSForm.exe is used across the world primarily by organizations with a social purpose so you can have real impact!
 
-Setting up Python on Windows:
------------------------------
+Issues tagged as [quick win](https://github.com/opendatakit/xlsform.exe/labels/quick%20win) should be a good place to start. There are also currently many issues tagged as [needs reproduction](https://github.com/opendatakit/xlsform.exe/labels/needs%20reproduction) which need someone to try to reproduce them with the current version of ODK XLSForm.exe and comment on the issue with their findings.
 
-Install Python 2.7 (32 bit)
+If you're ready to contribute code, see [the contribution guide](CONTRIBUTING.md).
 
-This has been updated to use Python 2.7 (now built with 2.7.13)
-
-Add Scripts directory to PATH
------------------------------
-
-You only need to do this for the instructions below. Open a CMD window and execute:
-
-```Shell
-set PATH=%PATH%;C:\Python27\Scripts
-```
-
-Install pip
--------------------------------
-
-On Windows, [Install setup-tools](https://pypi.python.org/pypi/setuptools#windows-simplified) and use `easy_install pip`
-On Linux, you can use python-pip package.
-
-InsecurePlatformWarning
-------------------------------
-To avoid this warning you likely need to install [PyOpenSSL](https://urllib3.readthedocs.org/en/latest/security.html#pyopenssl)
-
-```
-pip install urllib3 pyopenssl ndg-httpsclient pyasn1
-python
-import urllib3.contrib.pyopenssl
-urllib3.contrib.pyopenssl.inject_into_urllib3()
-exit()
-```
-
-Install misc libraries
-------------------------------
-
-In the CMD window, run:
-
-```
-easy_install pip
-pip install xlrd lxml unicodecsv
-```
-
-Download and install elementtree
-------------------------------
-Download these at:
-[elementtree](https://pypi.python.org/pypi/elementtree/1.2.6-20050316)
-
-unzip and run
-```
-python setup.py install
-```
-in the unzipped directory
-
-Install py2exe
-------------------------------
-
-Install [py2exe](http://www.py2exe.org/)
-
-Download and install the 32-bit version (0.6.9)
-
-Building the exe:
------------------
-
-1. Download the pyxform source and add the nested pyxform folder to this project's root.
-
-2. Delete the .git repo within that directory.
-
-3. In this projects root directory `python setup.py py2exe`
-
-4. Create an `output` directory within the `dist` directory.
-
-5. Rename the `dist` directory to `xlsform`.
-
-6. Right-click on `xlsform`, choose Send To / Compressed (zipped) folder.  
-
-The resulting zip file is equivalent to the zip available on the opendatakit.org downloads page
-
-NOTE: at the end of the build of the dist directory, you will get this (expected) summary:
-
-```
-copying C:\Python27\lib\site-packages\py2exe\run.exe -> D:\workspace\xlsform_exe\dist\xlsform.exe
-The following modules appear to be missing
-['ElementC14N', '_scproxy', 'cElementTree', 'odk_validate.check_xform']
-
-*** binary dependencies ***
-Your executable(s) also depend on these dlls which are not included,
-you may or may not need to distribute them.
-
-Make sure you have the license if you distribute any of them, and
-make sure you don't distribute files belonging to the operating system.
-
-   WS2_32.dll - C:\WINDOWS\system32\WS2_32.dll
-   SHELL32.dll - C:\WINDOWS\system32\SHELL32.dll
-   USER32.dll - C:\WINDOWS\system32\USER32.dll
-   ADVAPI32.dll - C:\WINDOWS\system32\ADVAPI32.dll
-   KERNEL32.dll - C:\WINDOWS\system32\KERNEL32.dll
-```
+## Downloading builds
+Current and previous production builds can be found on the [ODK website](https://opendatakit.org/downloads/download-info/odk-collect-apk).
