@@ -60,4 +60,4 @@ Issues tagged as [quick win](https://github.com/opendatakit/xlsform.exe/labels/q
 If you're ready to contribute code, see [the contribution guide](CONTRIBUTING.md).
 
 ## Downloading builds
-Current and previous production builds can be found on the [ODK website](https://opendatakit.org/downloads/download-info/odk-collect-apk).
+Current and previous production builds can be found on the [ODK website](http://opendatakit.org/downloads/download-info/xlsform-for-windows).
