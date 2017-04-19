@@ -50,7 +50,7 @@ ODK XLSForm.exe is part of Open Data Kit (ODK), a free and open-source set of to
 1. In the `dist` folder, make sure `output` is empty.
 1. Rename the `dist` directory to `XLSForm vx.x.x`.
 1. Right-click on `XLSForm vx.x.x`, choose `Send To / Compressed (zipped) folder`. 
-1. The resulting zip file is equivalent to the zip available on the [ODK website](http://opendatakit.org/downloads/download-info/xlsform-for-windows/) page
+	* The resulting zip file is equivalent to the zip available on the [ODK website](http://opendatakit.org/downloads/download-info/xlsform-for-windows/) page
 
 ## Contributing code
 Any and all contributions to the project are welcome. ODK XLSForm.exe is used across the world primarily by organizations with a social purpose so you can have real impact!
