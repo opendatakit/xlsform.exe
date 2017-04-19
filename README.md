@@ -3,6 +3,17 @@
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Slack status](http://slack.opendatakit.org/badge.svg)](http://slack.opendatakit.org)
 
+ODK XLSForm.exe is a Windows application for converting an XLSForm into an XForm that is compliant with the [ODK XForms spec](http://opendatakit.github.io/xforms-spec).
+   
+ODK XLSForm.exe is part of Open Data Kit (ODK), a free and open-source set of tools which help organizations author, field, and manage mobile data collection solutions. Learn more about the Open Data Kit project and its history [here](https://opendatakit.org/about/) and read about example ODK deployments [here](https://opendatakit.org/about/deployments/).
+
+* ODK website: [https://opendatakit.org](https://opendatakit.org)
+* ODK community mailing list: [http://groups.google.com/group/opendatakit](http://groups.google.com/group/opendatakit)
+* ODK developer mailing list: [http://groups.google.com/group/opendatakit-developers](http://groups.google.com/group/opendatakit-developers)
+* ODK developer Slack chat: [http://slack.opendatakit.org](http://slack.opendatakit.org) 
+* ODK developer Slack archive: [http://opendatakit.slackarchive.io](http://opendatakit.slackarchive.io) 
+* ODK developer wiki: [https://github.com/opendatakit/opendatakit/wiki](https://github.com/opendatakit/opendatakit/wiki)
+
 ## Please read
 * XLSForm.exe does not work on every computer, it does not validate the output XML, and it is not updated frequently. For these reasons, we recommend you use the online [XLSForm converter](http://opendatakit.org/use/xlsform/). 
 * When running the app, some users might be [missing the Microsoft Visual C runtime DLL](http://www.py2exe.org/index.cgi/Tutorial#A5.ProvidingtheMicrosoftVisualCruntimeDLL) on their computer. This DLL is not bundled with the exe and there is no easy workaround for these users.
