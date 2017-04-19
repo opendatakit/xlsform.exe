@@ -58,7 +58,7 @@ In the CMD window, run:
 
 ```
 easy_install pip
-pip install xlrd lxml
+pip install xlrd lxml unicodecsv
 ```
 
 Download and install elementtree
