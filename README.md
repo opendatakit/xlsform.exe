@@ -31,7 +31,7 @@ ODK XLSForm.exe is part of Open Data Kit (ODK), a free and open-source set of to
 	* `git clone https://github.com/YOUR-GITHUB-USERNAME/xlsform-windows`
 1. Install [Python 2.7.x (32-bit)](https://www.python.org/downloads/).
 	* Add `C:\Python27` and `C:\Python27\Scripts` to your path.
-1. Install required libraries for pyxform
+1. Install required libraries for pyxform.
 	* `pip install xlrd unicodecsv`
 1. Download [elementtree (zip)](http://effbot.org/downloads#elementtree).
 	* Unzip and run `python setup.py install` in the unzipped directory.
