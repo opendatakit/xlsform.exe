@@ -1,4 +1,6 @@
 # ODK XLSForm.exe
+## This tool has been retired. Please use [ODK XLSForm Offline](https://github.com/opendatakit/xlsform-offline) instead.
+
 ![Platform](https://img.shields.io/badge/platform-Python-blue.svg)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Slack status](http://slack.opendatakit.org/badge.svg)](http://slack.opendatakit.org)
